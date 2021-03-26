@@ -12,7 +12,7 @@ func PaymentSources(cards []types.Card) []types.PaymentSource {
 		if card.Balance > 0 && card.Active {
 			cart:=types.PaymentSource{
 				Type: "card", 
-				Number: "5058 xxxx xxxx 8888",
+				Number: string(card.PAN),
 				Balance: card.Balance,
 			}
 			payment=append(payment,cart)

@@ -7,18 +7,14 @@ import (
 func ExamplePaymentSources() {
 	card := []types.Card{
 		{
+			PAN: "5058 1111 1111 8888",
 			Balance: 10_000,
 			Active:  true,
 		},
-		{
-			Balance: 20_000,
-			Active:  false,
-		},
 	}
-	//var cart []types.PaymentSource
 	for _, carts:=range PaymentSources(card){
-	fmt.Println(carts.Number)
+		fmt.Println(carts.Number)
 	}
 //Output:
-//5058 xxxx xxxx 8888
+//5058 1111 1111 8888
 }
